@@ -9,6 +9,7 @@ $(document).ready(function() {
     var secondsDisplay;
     var minutesDisplay;
     var intervalSeconds = 0;
+    var censoredBeep_audio = new Audio('censored_beep.mp3');
 
     $('#startTimerButton').click(startTimer);
 
@@ -27,7 +28,7 @@ $(document).ready(function() {
         totalSeconds += 1;
 
         if (totalSeconds % intervalSeconds === 0) {
-            console.log('Interval hit');
+            censoredBeep_audio.play();
         }
 
         seconds = totalSeconds % 60;
