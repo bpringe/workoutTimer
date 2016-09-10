@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>Workout Timer</title>
+    <link rel="stylesheet" type="text/css" href="workoutStyle.css">
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <script src="workoutTimer.js"></script>
+</head>
+<body>
+    <h1>Workout Timer</h1>
+    <p>
+        Notify every&nbsp;
+        <input type="number" id="intervalMinutes" size="2" min="0" max="59" value="0">
+        &nbsp;minutes&nbsp;
+        <input type="number" id="intervalSeconds" size="2" min="0" max="59" value="0">
+        &nbsp;seconds&nbsp;
+        <button type="button" id="startTimerButton">Start Timer</button>
+    </p>
+    <div id="clock">
+        <span id="minutes">00</span>:<span id="seconds">00</span>
+    </div>
+</body>
+</html>
