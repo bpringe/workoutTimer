@@ -3,15 +3,21 @@ $(document).ready(function() {
     var minutesElement = $('#minutes');
     var intervalSecondsElement = $('#intervalSeconds');
     var intervalMinutesElement = $('#intervalMinutes');
+    var startButton = $('#startButton');
+    var stopButton = $('#stopButton');
+    var clearButton = $('#clearButton');
     var totalSeconds = 0;
     var seconds = 0;
     var minutes = 0;
     var secondsDisplay;
     var minutesDisplay;
     var intervalSeconds = 0;
-    var censoredBeep_audio = new Audio('censored_beep.mp3');
+    var intervalSound = new Audio('sounds/milton_stapler.mp3');
+    var interval;
 
-    $('#startTimerButton').click(startTimer);
+    startButton.click(startTimer);
+    stopButton.click(stopTimer);
+    clearButton.click(clearTimer);
 
     function startTimer() {
         intervalSeconds = Number(intervalMinutesElement.val() * 60)
@@ -21,14 +27,29 @@ $(document).ready(function() {
             return;
         }
 
-        setInterval(count, 1000);
+        startButton.attr('disabled', 'disabled');
+
+        interval = setInterval(count, 1000);
+    }
+
+    function stopTimer() {
+        clearInterval(interval);
+        startButton.removeAttr('disabled');
+    }
+
+
+    function clearTimer() {
+        totalSeconds = 0;
+        seconds = 0;
+        minutes = 0;
+        displayClock();
     }
 
     function count() {
         totalSeconds += 1;
 
         if (totalSeconds % intervalSeconds === 0) {
-            censoredBeep_audio.play();
+            intervalSound.play();
         }
 
         seconds = totalSeconds % 60;

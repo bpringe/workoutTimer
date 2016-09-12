@@ -1,6 +1,9 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <title>Workout Timer</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="workoutStyle.css">
     <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
     <script src="workoutTimer.js"></script>
@@ -13,7 +16,9 @@
         &nbsp;minutes&nbsp;
         <input type="number" id="intervalSeconds" size="2" min="0" max="59" value="0">
         &nbsp;seconds&nbsp;
-        <button type="button" id="startTimerButton">Start Timer</button>
+        <button type="button" id="startButton">Start</button>
+        <button type="button" id="stopButton">Stop</button>
+        <button type="button" id="clearButton">Clear</button>
     </p>
     <div id="clock">
         <span id="minutes">00</span>:<span id="seconds">00</span>
